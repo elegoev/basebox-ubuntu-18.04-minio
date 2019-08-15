@@ -8,8 +8,9 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 The base image is provisioned with bash script [ubuntu-18.04-minio.sh](https://github.com/elegoev/vagrant-ubuntu/blob/master/vagrant-ubuntu1804-minio/provisioning/ubuntu-18.04-minio.sh)
 
 ### References
-  - [Install Minio on Ubuntu 18.04 LTS](https://linuxhint.com/install_minio_ubuntu_1804)
-  - [Minio Quickstart Guide](https://docs.min.io/docs/minio-quickstart-guide)
+- [Install Minio on Ubuntu 18.04 LTS](https://linuxhint.com/install_minio_ubuntu_1804)
+- [Minio Quickstart Guide](https://docs.min.io/docs/minio-quickstart-guide)
+- [Used Vagrantfile for Basebox](https://github.com/elegoev/vagrant-ubuntu-18.04/blob/master/jenkins/vagrant/esxi/_Vagrantfile)
 
 ### Host Access
 | Application          | URL                            | Access Key / Secret Key        |
