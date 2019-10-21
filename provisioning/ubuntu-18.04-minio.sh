@@ -40,4 +40,4 @@ DATE=`date +%Y%m%d%H%M`
 
 # store k3s version
 MINIO_VERSION=1.0
-echo "$MINIO_VERSION.$DATE" > /vagrant/version
+echo "minio-$MINIO_VERSION" > /vagrant/version
