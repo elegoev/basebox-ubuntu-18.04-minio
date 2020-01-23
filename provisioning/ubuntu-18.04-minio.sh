@@ -38,6 +38,6 @@ sudo systemctl enable minio
 # create date string
 DATE=`date +%Y%m%d%H%M`
 
-# store k3s version
+# store minio version
 MINIO_VERSION=$(minio --version | sed -n 1p | grep minio | awk  '{print $3}' | cut -d'.' -f 2 | cut -d'T' -f 1)
 echo "minio-$MINIO_VERSION" > /vagrant/version
