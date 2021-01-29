@@ -1,7 +1,9 @@
 #!/bin/bash
 
+application_file_path="/vagrant/installed-application.md"
+
 # update ubuntu
-sudo apt update
+# sudo apt update
 
 # create inio user
 sudo useradd --system minio-user --shell /sbin/nologin
@@ -26,18 +28,21 @@ sudo mkdir /etc/minio
 sudo chown minio-user:minio-user /etc/minio
 
 # create minio environment
-echo 'MINIO_VOLUMES="/usr/local/share/minio"'   > /etc/default/minio
-echo 'MINIO_ACCESS_KEY=minio-admin' >> /etc/default/minio
-echo 'MINIO_SECRET_KEY=minio-admin' >> /etc/default/minio
+sudo echo 'MINIO_VOLUMES="/usr/local/share/minio"' > /etc/default/minio
+sudo echo 'MINIO_ACCESS_KEY=minio-admin' >> /etc/default/minio
+sudo echo 'MINIO_SECRET_KEY=minio-admin' >> /etc/default/minio
 
 # install Service
-sudo cp /vagrant/files/minio/minio.service /etc/systemd/system
-sudo systemctl start minio
+sudo cp /home/vagrant/files-prov/minio/minio.service /etc/systemd/system
 sudo systemctl enable minio
+sudo systemctl start minio
 
 # create date string
 DATE=`date +%Y%m%d%H%M`
 
 # store minio version
 MINIO_VERSION=$(minio --version | sed -n 1p | grep minio | awk  '{print $3}' | cut -d'.' -f 2 | cut -d'T' -f 1)
-echo "minio-$MINIO_VERSION" > /vagrant/version
+echo "# Installed application "  > $application_file_path
+echo "***                     " >> $application_file_path
+echo "> minio $MINIO_VERSION  " >> $application_file_path
+
