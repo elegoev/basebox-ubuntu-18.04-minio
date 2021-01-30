@@ -38,7 +38,7 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
 #### Access Minio Web-App
 
-Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key listed in your service minio status command to login in for the first time.
+Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key to login in for the first time.
 
     Browser Access: https://minio.localtest.me
 
