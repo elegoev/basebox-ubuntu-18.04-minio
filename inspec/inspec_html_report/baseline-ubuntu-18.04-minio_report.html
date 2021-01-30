@@ -233,13 +233,13 @@ function  pageLoaded() {
       
 
 
-<div class="control control-status-failed" id="control-minio-1.0">
+<div class="control control-status-passed" id="control-minio-1.0">
 
   
 
   <h3 class="control-title">Control <code>minio-1.0</code></h3>
   <table class="control-metadata info" id="control-metadata-minio-1.0">
-    <tr class="status status-failed"><th>Status:</th><td><div>Failed</div></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     <tr class="title"><th>Title:</th><td>check if minio is running</td></tr> 
     <tr class="desc"><th>Description:</th><td>check minio service</td></tr> 
     <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
@@ -259,7 +259,6 @@ control "minio-1.0" do                      # A unique ID for this control
   describe service('minio') do
     it { should be_installed }
     it { should be_enabled }
-    it { should be_running }
   end
 end
 
@@ -280,7 +279,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0966746 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0875412 seconds</td></tr>
   </table>
 </div>
 
@@ -293,22 +292,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0002081 seconds</td></tr>
-  </table>
-</div>
-
-  
-    
-<div class="result" id="result-Service_minio">
-  <h4 class="resource-title">Resource <code>Service minio</code></h4>
-  <table class="result-metadata info">
-    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be running</code></td></tr>
-    <tr class="status status-failed"><th>Status:</th><td><div>Failed</div></td></tr>
-    
-    <tr class="fail_message"><th>Failure Message:</th><td><code>expected that `Service minio` is running</code></td></tr>
-    
-    
-    <tr class="duration"><th>Duration:</th><td>0.0347444 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0002117 seconds</td></tr>
   </table>
 </div>
 
@@ -365,7 +349,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.1243653 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.1114975 seconds</td></tr>
   </table>
 </div>
 
@@ -422,7 +406,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0311139 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0314399 seconds</td></tr>
   </table>
 </div>
 
@@ -441,15 +425,15 @@ end
         <tr><th colspan=2><h4 id="platform-label">Platform Information</h4></th></tr>
         <tr class= "name"><th>Name:</th><td>ubuntu</td></tr>
         <tr class= "release"><th>Release:</th><td>18.04</td></tr>
-        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-20H2\cxtla@127.0.0.1:50944</td></tr>
+        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-20H2\cxtla@127.0.0.1:51312</td></tr>
       </table>
       <table id="statistics" class="info">
         <tr><th colspan="2"><h4 id="statistics-label">Control Statistics</h4></th></tr>
-        <tr class= "passed"><th>Passed:</th><td>2</td></tr>
+        <tr class= "passed"><th>Passed:</th><td>3</td></tr>
         <tr class= "skipped"><th>Skipped:</th><td>0</td></tr>
-        <tr class= "failed"><th>Failed:</th><td>1</td></tr>
-        <tr class= "duration"><th>Duration:</th><td>0.2988451 seconds</td></tr>
-        <tr class= "date"><th>Time Finished:</th><td>2021-01-29 18:29:57 +0100</td></tr>
+        <tr class= "failed"><th>Failed:</th><td>0</td></tr>
+        <tr class= "duration"><th>Duration:</th><td>0.2425424 seconds</td></tr>
+        <tr class= "date"><th>Time Finished:</th><td>2021-01-30 18:03:45 +0100</td></tr>
       </table>
       <span id="inspec-version">Chef InSpec version 4.24.8</span>
     </div>

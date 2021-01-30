@@ -31,9 +31,11 @@ sudo chown minio-user:minio-user /etc/minio
 sudo echo 'MINIO_VOLUMES="/usr/local/share/minio"' > /etc/default/minio
 sudo echo 'MINIO_ACCESS_KEY=minio-admin' >> /etc/default/minio
 sudo echo 'MINIO_SECRET_KEY=minio-admin' >> /etc/default/minio
+sudo echo 'MINIO_OPTS="-C /etc/minio --address minio.localtest.me:443"' >> /etc/default/minio 
 
 # install Service
 sudo cp /home/vagrant/files-prov/minio/minio.service /etc/systemd/system
+sudo systemctl daemon-reload
 sudo systemctl enable minio
 sudo systemctl start minio
 
@@ -45,4 +47,9 @@ MINIO_VERSION=$(minio --version | sed -n 1p | grep minio | awk  '{print $3}' | c
 echo "# Installed application "  > $application_file_path
 echo "***                     " >> $application_file_path
 echo "> minio $MINIO_VERSION  " >> $application_file_path
+
+# store mino client version
+MINIO_CLIENT_VERSION=$(mc --version)
+echo "> $MINIO_CLIENT_VERSION  " >> $application_file_path
+
 

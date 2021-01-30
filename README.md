@@ -29,6 +29,19 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 - [vagrant-serverspec](https://github.com/vvchik/vagrant-serverspec)
 - [vagrant-vmware-esxi](https://github.com/josenk/vagrant-vmware-esxi)
 
+### Using Minio
+
+#### Access- & Secret-Key
+
+    Access key: minio-admin
+    Secret key: minio-admin
+
+#### Access Minio Web-App
+
+Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key listed in your service minio status command to login in for the first time.
+
+    Browser Access: https://minio.localtest.me
+
 ### Versioning
 
 Repository follows sematic versioning  [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-green.svg)](http://semver.org)
