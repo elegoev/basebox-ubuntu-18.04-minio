@@ -6,6 +6,6 @@ deploy2*.ps1
 *.lock
 packer_build_dir/
 rspec_html_reports/
-provision/installed-application.md
+**/provision/installed-application.md
 
 

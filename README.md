@@ -72,7 +72,7 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
 Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key to login in for the first time.
 
-    Browser Access: https://minio.localtest.me:9000
+    Browser Access: http://minio.localtest.me:9000
 
 ### Versioning
 
