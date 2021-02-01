@@ -28,19 +28,13 @@ sudo mkdir /etc/minio
 sudo chown minio-user:minio-user /etc/minio
 
 # create minio environment
-echo ">>>>>> create minio environment"
-sudo touch /etc/default/minio
-sudo echo 'MINIO_VOLUMES="/usr/local/share/minio"' > /etc/default/minio
-sudo echo 'MINIO_ACCESS_KEY=minio-admin' >> /etc/default/minio
-sudo echo 'MINIO_SECRET_KEY=minio-admin' >> /etc/default/minio
-sudo echo 'MINIO_ROOT_USER=minio-admin'  >> /etc/default/minio
-sudo echo 'MINIO_ROOT_PASSWORD=minio-admin' >> /etc/default/minio
+sudo cp /home/vagrant/files-prov/minio/minio.default.env /etc/default/minio
 
 # install Service
 sudo cp /home/vagrant/files-prov/minio/minio.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable minio
-
+sudo systemctl start minio
 
 # create date string
 DATE=`date +%Y%m%d%H%M`
