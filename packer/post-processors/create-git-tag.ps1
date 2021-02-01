@@ -5,7 +5,7 @@ $src_image_version = $env:IMAGE_VERSION
 $vagrant_file_template = '
 Vagrant.configure("2") do |config|
 
-    $basebox_name="elegoev-ubuntu-18.04-minio-test"
+    $basebox_name="ubuntu-18.04-minio-test"
     $basebox_hostname="ubuntu-1804-minio-test"
     $src_image_name="elegoev/ubuntu-18.04-minio"
     $vb_group_name="basebox-minio-test"
@@ -26,6 +26,9 @@ Vagrant.configure("2") do |config|
         vb.customize ["modifyvm", :id, "--groups", "/#{$vb_group_name}" ]
         vb.customize ["modifyvm", :id, "--vram", 256 ]
       end
+
+      # forwarding ports
+      machine.vm.network "forwarded_port", id: "minio",  auto_correct: true, protocol: "tcp", guest: 9000, host: 9000, host_ip: "127.0.0.1"
 
     end   
 

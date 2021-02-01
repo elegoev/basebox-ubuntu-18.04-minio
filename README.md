@@ -31,6 +31,39 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
 ### Using Minio
 
+#### Vagrantfile
+
+    Vagrant.configure("2") do |config|
+
+        $basebox_name="ubuntu-18.04-minio-test"
+        $basebox_hostname="ubuntu-1804-minio-test"
+        $src_image_name="elegoev/ubuntu-18.04-minio"
+        $vb_group_name="basebox-minio-test"
+
+        config.vm.define "#{$basebox_name}" do |machine|
+          machine.vm.box = "#{$src_image_name}"
+          machine.vm.box_version = "$image_version"
+    
+          # define guest hostname
+          machine.vm.hostname = "#{$basebox_hostname}"
+
+          machine.vm.provider "virtualbox" do |vb|
+            vb.name = $basebox_name
+            vb.cpus = 1
+            vb.customize ["modifyvm", :id, "--memory", "1024" ]
+            vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+            vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+            vb.customize ["modifyvm", :id, "--groups", "/#{$vb_group_name}" ]
+            vb.customize ["modifyvm", :id, "--vram", 256 ]
+          end
+
+          # forwarding ports
+          machine.vm.network "forwarded_port", id: "minio",  auto_correct: true, protocol: "tcp", guest: 9000, host: 9000, host_ip: "127.0.0.1"
+
+        end   
+
+    end
+
 #### Access- & Secret-Key
 
     Access key: minio-admin
@@ -40,7 +73,7 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
 Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key to login in for the first time.
 
-    Browser Access: https://minio.localtest.me
+    Browser Access: 
 
 ### Versioning
 

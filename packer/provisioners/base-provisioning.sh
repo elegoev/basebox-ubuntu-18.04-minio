@@ -31,7 +31,6 @@ sudo chown minio-user:minio-user /etc/minio
 sudo echo 'MINIO_VOLUMES="/usr/local/share/minio"' > /etc/default/minio
 sudo echo 'MINIO_ACCESS_KEY=minio-admin' >> /etc/default/minio
 sudo echo 'MINIO_SECRET_KEY=minio-admin' >> /etc/default/minio
-sudo echo 'MINIO_OPTS="-C /etc/minio --address minio.localtest.me:443"' >> /etc/default/minio 
 
 # install Service
 sudo cp /home/vagrant/files-prov/minio/minio.service /etc/systemd/system
