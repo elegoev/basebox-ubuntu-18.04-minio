@@ -42,7 +42,6 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
         config.vm.define "#{$basebox_name}" do |machine|
           machine.vm.box = "#{$src_image_name}"
-          machine.vm.box_version = "$image_version"
     
           # define guest hostname
           machine.vm.hostname = "#{$basebox_hostname}"
@@ -73,7 +72,7 @@ Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/u
 
 Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and use the access and secret key to login in for the first time.
 
-    Browser Access: 
+    Browser Access: https://minio.localtest.me:9000
 
 ### Versioning
 
