@@ -74,6 +74,11 @@ Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and
 
     Browser Access: http://minio.localtest.me:9000
 
+### Reference
+
+- [Install Minio on Ubuntu 18.04 LTS](https://linuxhint.com/install_minio_ubuntu_1804/)
+- []()
+
 ### Versioning
 
 Repository follows sematic versioning  [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-green.svg)](http://semver.org)
