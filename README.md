@@ -77,7 +77,6 @@ Open up your browser and visit FQDN (make sure to use the FQDN you assigned) and
 ### Reference
 
 - [Install Minio on Ubuntu 18.04 LTS](https://linuxhint.com/install_minio_ubuntu_1804/)
-- []()
 
 ### Versioning
 
